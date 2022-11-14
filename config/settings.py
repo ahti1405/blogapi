@@ -56,10 +56,10 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 # corsheaders config
-CORS_ORIGIN_WHITELIST = {
+CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://localhost:8000',
-}
+)
 CSRF_TRUSTED_ORIGINS = ['http://localhost:3000']
 # end of corsheaders config
 
@@ -119,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Bishkek"
 
 USE_I18N = True
 
@@ -141,6 +141,6 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 # restframework config
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.IsAuthenticated',
     ]
 }
